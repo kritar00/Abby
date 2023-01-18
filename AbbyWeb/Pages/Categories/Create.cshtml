@@ -1,0 +1,50 @@
+﻿@page
+@model AbbyWeb.Pages.Categories.CreateModel
+@{
+}
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary pl-3">Create category</h2>
+            <hr />
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <label asp-for="Category.Name"></label> <input asp-for="Category.Name" class="form-control" />
+            <span asp-validation-for="Category.Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Category.DisplayOrder"></label> <input asp-for="Category.DisplayOrder" class="form-control" />
+            <span asp-validation-for="Category.DisplayOrder" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Category.Title"></label> <input asp-for="Category.Title" class="form-control" />
+            <span asp-validation-for="Category.Title" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Category.Description"></label> <input asp-for="Category.Description" class="form-control" />
+            <span asp-validation-for="Category.Description" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Category.Image"></label> <input asp-for="Category.Image" class="form-control" />
+            <span asp-validation-for="Category.Image" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Category.Status"></label> <select asp-for="Category.Status" class="form-control">
+                <option value="true">OK</option>
+                <option value="false">Not OK</option>
+            </select>
+            <span asp-validation-for="Category.Status" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px;">Create</button>
+        <a asp-page="Index" class="btn btn-secondary" style="width:150px;">Back to list</a>
+    </div>
+    <partial name="_ValidationScriptsPartial" />
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
